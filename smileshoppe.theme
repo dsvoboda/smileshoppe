@@ -1,0 +1,20 @@
+<?php
+/**
+ * Implements hook_preprocess_HOOK() for "image".
+ */
+function smileshoppe_preprocess_image(&$variables) {
+	$variables['attributes']['class'][] = "lazyload";
+}
+function smileshoppe_preprocess_page(&$variables) {
+	if ($node = \Drupal::routeMatch()->getParameter('node')) {
+		if($node instanceof \Drupal\node\NodeInterface) {
+			$nid = $node->id();
+			if($nid == 216) {
+				$variables['#attached']['library'][] = 'smileshoppe/smileshoppe.page_gallery';
+			}
+			if($nid == 223) {
+				$variables['#attached']['library'][] = 'smileshoppe/smileshoppe.page_anchors';
+			}
+		}
+	}
+}
