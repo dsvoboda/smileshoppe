@@ -2,10 +2,8 @@
  * @file
  * View UI admin theme.
  *
- * Replaces the styles provided by the views_ui module.
+ * Replaces the inherited styles provided by Stable.
  */
-
-@import "../base/variables.pcss.css";
 
 .views-admin .links {
   margin: 0;
@@ -27,7 +25,7 @@
 }
 .views-admin .icon,
 .views-admin .icon-text {
-  background-image: url(../../../../modules/views_ui/images/sprites.png);
+  background-image: url(../../images/core/stable/views_ui/sprites.png);
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: left top; /* LTR */
@@ -635,21 +633,17 @@ td.group-title {
 .views-ui-dialog .views-override > * {
   margin: 0;
 }
-
 .views-ui-dialog .views-progress-indicator {
   position: absolute;
-  z-index: 1;
-  top: 0;
-  right: var(--jui-dialog-close-button-reserved-space); /* LTR */
-  color: var(--jui-dialog-title-color);
-  font-size: var(--font-size-xxs);
-  line-height: var(--jui-dialog-close-button-reserved-space);
+  top: 32px;
+  right: 10px; /* LTR */
+  color: #fff;
+  font-size: 11px;
 }
 [dir="rtl"] .views-ui-dialog .views-progress-indicator {
   right: auto;
-  left: var(--jui-dialog-close-button-reserved-space);
+  left: 10px;
 }
-
 .views-ui-dialog .views-progress-indicator:before {
   content: "\003C\00A0";
 }

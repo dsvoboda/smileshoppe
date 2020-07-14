@@ -41,9 +41,6 @@
    * jQuery.UI dropdown.
    */ /* Light gray with 0.8 opacity. */ /* Text color with 0.1 opacity. */
   /**
-   * jQuery.UI dialog.
-   */
-  /**
    * Progress bar.
    */
   /**
@@ -61,7 +58,6 @@ table {
   width: 100%;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-  border-collapse: collapse;
 }
 
 .sticky-header {

@@ -21,7 +21,6 @@ use Symfony\Component\Validator\Context\ExecutionContext;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use Symfony\Component\Validator\Mapping\PropertyMetadata;
-use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * A test case to ease testing Constraint Validators.
@@ -98,8 +97,7 @@ abstract class ConstraintValidatorTestCase extends TestCase
 
     protected function createContext()
     {
-        $translator = $this->getMockBuilder(TranslatorInterface::class)->getMock();
-        $translator->expects($this->any())->method('trans')->willReturnArgument(0);
+        $translator = $this->getMockBuilder('Symfony\Component\Translation\TranslatorInterface')->getMock();
         $validator = $this->getMockBuilder('Symfony\Component\Validator\Validator\ValidatorInterface')->getMock();
         $contextualValidator = $this->getMockBuilder('Symfony\Component\Validator\Validator\ContextualValidatorInterface')->getMock();
 
@@ -238,7 +236,7 @@ class ConstraintViolationAssertion
     private $constraint;
     private $cause;
 
-    public function __construct(ExecutionContextInterface $context, string $message, Constraint $constraint = null, array $assertions = [])
+    public function __construct(ExecutionContextInterface $context, $message, Constraint $constraint = null, array $assertions = [])
     {
         $this->context = $context;
         $this->message = $message;
@@ -246,14 +244,14 @@ class ConstraintViolationAssertion
         $this->assertions = $assertions;
     }
 
-    public function atPath(string $path)
+    public function atPath($path)
     {
         $this->propertyPath = $path;
 
         return $this;
     }
 
-    public function setParameter(string $key, $value)
+    public function setParameter($key, $value)
     {
         $this->parameters[$key] = $value;
 
@@ -281,14 +279,14 @@ class ConstraintViolationAssertion
         return $this;
     }
 
-    public function setPlural(int $number)
+    public function setPlural($number)
     {
         $this->plural = $number;
 
         return $this;
     }
 
-    public function setCode(string $code)
+    public function setCode($code)
     {
         $this->code = $code;
 
@@ -302,7 +300,7 @@ class ConstraintViolationAssertion
         return $this;
     }
 
-    public function buildNextViolation(string $message): self
+    public function buildNextViolation($message)
     {
         $assertions = $this->assertions;
         $assertions[] = $this;
@@ -330,10 +328,10 @@ class ConstraintViolationAssertion
         }
     }
 
-    private function getViolation(): ConstraintViolation
+    private function getViolation()
     {
         return new ConstraintViolation(
-            $this->message,
+            null,
             $this->message,
             $this->parameters,
             $this->context->getRoot(),

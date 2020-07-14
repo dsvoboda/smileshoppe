@@ -45,9 +45,6 @@
    * jQuery.UI dropdown.
    */ /* Light gray with 0.8 opacity. */ /* Text color with 0.1 opacity. */
   /**
-   * jQuery.UI dialog.
-   */
-  /**
    * Progress bar.
    */
   /**
@@ -416,8 +413,7 @@
 }
 
 /**
- * Set the inherited button border color to transparent for high contrast
- * mode.
+ * Set the inherited button border color to transparent for high contrast mode.
  */
 
 @media screen and (-ms-high-contrast: active) {

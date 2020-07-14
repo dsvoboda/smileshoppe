@@ -34,7 +34,7 @@ class NodeAccessRebuildNodeGrantsTest extends NodeTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     $this->adminUser = $this->drupalCreateUser([

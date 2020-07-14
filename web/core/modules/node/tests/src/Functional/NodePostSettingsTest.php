@@ -15,7 +15,7 @@ class NodePostSettingsTest extends NodeTestBase {
    */
   protected $defaultTheme = 'classy';
 
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     $web_user = $this->drupalCreateUser([
