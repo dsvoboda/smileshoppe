@@ -1,0 +1,19 @@
+name: 'Smileshoppe'
+description: 'New custom theme for smileshoppe.com'
+type: theme
+core: 9.x
+libraries:
+  - sparrow/smileshoppe.base
+ckeditor_stylesheets:
+  - css/global-styles-min.css
+regions:
+  page_top: 'Page Top'
+  header: 'Header'
+  info_messages: 'Messages'
+  help: 'Help'
+  content: 'Main Content'
+  footer: 'Footer'
+  page_bottom: 'Page Bottom'
+  inactive: 'Available for Pages'
+libraries-override:
+  core/modernizr: false
