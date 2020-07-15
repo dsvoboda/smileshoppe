@@ -1,1 +1,0 @@
-RewriteRule ^web/(.*)$ /$1 [NC,L,QSA]
