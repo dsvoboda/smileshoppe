@@ -3,7 +3,7 @@
 	
 	Drupal.behaviors.smileshoppe_menu = {
 		attach: function(context, settings) {
-			setupMenu($('.sidebar .menu-main'));
+			setupMenu($('#block-smileshoppe-main-menu .menu-main'));
 		}
 	}
 	
@@ -18,7 +18,9 @@
 				$a.removeAttr('title');
 				$a.empty();
 				$a.append('<h4>' + page_title + '</h4>').append('<span>' + title + '</span>');
+				$li.addClass('li-processed');
 			});
+			$menu.addClass('menu-processed');
 		});
 	}
 	
