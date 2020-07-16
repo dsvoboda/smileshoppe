@@ -10,7 +10,7 @@
 	function setupMenu($menu) {
 		$menu.once('menu-processed').each(function(i) {
 			var $li = $menu.find('> li');
-			$li.each(function(a) {
+			$li.once('li-processed').each(function(a) {
 				var $a = $li.find('a');
 				var title = $a.attr('title');
 				var page_title = $a.text();
