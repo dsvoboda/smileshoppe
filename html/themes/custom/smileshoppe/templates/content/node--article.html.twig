@@ -85,7 +85,12 @@
 	<div{{ content_attributes.addClass(node.bundle|clean_class ~ '-content').addClass('node-content') }}>
 		<h1 class="title">{{ label }}</h1>
 		<small class="published">{{ node.getCreatedTime()|date('F j, Y @ g:i a') }}</small>
-		{{ content }}
+		{% if node.field_image is not empty %}
+		<div class="page-photo">
+			{{ content.field_image }}
+		</div>
+		{% endif %}
+		{{ content.body }}
 	</div>
 
 </div>
