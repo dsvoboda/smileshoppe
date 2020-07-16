@@ -29,10 +29,19 @@ smileshoppe.employees:
   css:
     theme:
       css/employees-min.css: { minified: true }
-  dependencies:
-    - smileshoppe/smileshoppe.smileshoppe_util
   js:
     js/employees-min.js: { minified: true }
+  dependencies:
+    - smileshoppe/smileshoppe.smileshoppe_util
+smileshoppe.services:
+  version: VERSION
+  css:
+    theme:
+      css/services-min.css: { minified: true }
+  js:
+    js/services-min.js: { minified: true }
+  dependencies:
+    - smileshoppe/smileshoppe.smileshoppe_util
 bartik.tabs:
   version: VERSION
   css:

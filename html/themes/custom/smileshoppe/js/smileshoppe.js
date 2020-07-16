@@ -21,7 +21,6 @@ var ss_ = (function($,smileshoppe_) {
 				}));
 				$title.attr('id',id);
 			});
-			alert('smileshoppe utilities called!');
 		});
 		return true;
 	}

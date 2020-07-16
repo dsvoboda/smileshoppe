@@ -1,0 +1,1 @@
+!function(s,e){"use strict";Drupal.behaviors.smileshoppe_services={attach:function(c,i){s("#block-views-block-services-services").once("anchors").each(function(c){e.gatedAnchors(s(this))})}}}(jQuery,ss_);

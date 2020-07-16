@@ -9,6 +9,16 @@
 	],
 "creatorBuild": "31491",
 "files": {
+	"/css/employees-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/employees-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/css/employees.css": {
 		"aP": 1,
 		"bl": 0,
@@ -59,6 +69,16 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/css/services.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/services-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/css/tools": {
 		"ft": 65536,
 		"oA": 1,
@@ -70,6 +90,17 @@
 		"oA": 1,
 		"oAP": "/build/img",
 		"oF": 0
+		},
+	"/js/employees-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/employees-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
 		},
 	"/js/employees.js": {
 		"bF": 0,
@@ -124,6 +155,39 @@
 		"oAP": "/js/menu-min.js",
 		"oF": 0,
 		"sC": 0,
+		"tS": 0
+		},
+	"/js/services-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/services-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/services.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/services-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/js/smileshoppe-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/smileshoppe-min-min.js",
+		"oF": 0,
+		"sC": 3,
 		"tS": 0
 		},
 	"/js/smileshoppe.js": {

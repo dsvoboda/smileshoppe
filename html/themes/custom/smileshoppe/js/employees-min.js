@@ -1,1 +1,1 @@
-!function(e,o){"use strict";Drupal.behaviors.smileshoppe_employees={attach:function(s,c){e("#block-views-block-employees-employees").once("anchors").each(function(s){alert("employees block loaded!"),o.gatedAnchors(e(this))})}}}(jQuery,ss_);
+!function(e,s){"use strict";Drupal.behaviors.smileshoppe_employees={attach:function(o,c){e("#block-views-block-employees-employees").once("anchors").each(function(o){s.gatedAnchors(e(this))})}}}(jQuery,ss_);
