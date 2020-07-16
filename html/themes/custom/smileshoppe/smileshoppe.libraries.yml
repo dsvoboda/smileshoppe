@@ -24,7 +24,7 @@ smileshoppe.page_anchors:
   version: VERSION
   js:
     js/page-anchors-min.js: { minified: true }
-smileshoppe/bartik.tabs:
+bartik.tabs:
   version: VERSION
   css:
     css/tools/bartik-tabs.css: { minified: false }
