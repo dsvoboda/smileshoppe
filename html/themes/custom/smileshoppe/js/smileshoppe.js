@@ -13,7 +13,7 @@ var ss_ = (function($,smileshoppe_) {
 			}
 			$list_content.once('indexed').each(function(a) {
 				var $content = $(this);
-				var $title = $content.find('> h2:first-child');
+				var $title = $content.find('h2');
 				var title = $title.text();
 				var id = title.replace(/ +/g, '-').toLowerCase();
 				$subnav.find('ul').append($('<li />', {
