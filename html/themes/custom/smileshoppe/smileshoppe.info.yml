@@ -3,7 +3,7 @@ description: 'New custom theme for smileshoppe.com'
 type: theme
 core: 8.x
 libraries:
-  - sparrow/smileshoppe.base
+  - smileshoppe/smileshoppe.base
 ckeditor_stylesheets:
   - css/global-styles-min.css
 regions:
