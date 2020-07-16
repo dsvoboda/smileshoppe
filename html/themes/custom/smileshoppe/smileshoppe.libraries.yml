@@ -47,6 +47,13 @@ smileshoppe.faqs:
   css:
     theme:
       css/faqs-min.css: { minified: true }
+smileshoppe.rotating_photos:
+  version: VERSION
+  css:
+    theme:
+      css/rotating-photos-min.css: { minified: true }
+  js:
+    js/rotating-photos-min.js: { minified: true }
 bartik.tabs:
   version: VERSION
   css:

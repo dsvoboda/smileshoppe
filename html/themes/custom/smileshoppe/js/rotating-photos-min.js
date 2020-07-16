@@ -1,0 +1,1 @@
+!function(t){"use strict";Drupal.behaviors.smileshoppe_rotating_photos={attach:function(t,o){alert("rotating photos setup called")}}}(jQuery);

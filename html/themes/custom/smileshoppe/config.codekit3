@@ -29,6 +29,16 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/css/faqs-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/faqs-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/css/faqs.css": {
 		"aP": 1,
 		"bl": 0,
@@ -76,6 +86,26 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/css/global-styles-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/rotating-photos-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/rotating-photos-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/rotating-photos.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/rotating-photos-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -173,6 +203,17 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/js/menu-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/js/rotating-photos.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/rotating-photos-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
