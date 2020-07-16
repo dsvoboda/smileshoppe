@@ -3,7 +3,7 @@
 	
 	Drupal.behaviors.smileshoppe_menu = {
 		attach: function(context, settings) {
-			setupMenu($('.sidebar .menu-main'));
+			//setupMenu($('.sidebar .menu-main'));
 		}
 	}
 	
