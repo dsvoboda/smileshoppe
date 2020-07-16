@@ -15,7 +15,7 @@ var ss_ = (function($,smileshoppe_) {
 				var $content = $(this);
 				var $title = $content.find('h2');
 				var title = $title.text();
-				var id = title.replace(/ +/g, '-').toLowerCase();
+				var id = title.replace(/^[^a-z]+|[^\w:.-]+/gi, "").toLowerCase();
 				$subnav.find('ul').append($('<li />', {
 					'html' : '<a href="#' + id + '">' + title + '</a>'
 				}));
