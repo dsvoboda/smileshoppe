@@ -104,7 +104,7 @@ ul {
 	border-left:#f6f6f6;
 	color:#787878;
 	font-size:14px;
-	background:url(/sites/default/themes/smileshoppe/img/content-bg.png) top left repeat-x;
+	background:url(/themes/custom/smileshoppe/img/content-bg.png) top left repeat-x;
 	box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	border-left:1px solid #f6f6f6;
@@ -130,7 +130,7 @@ ul.photos {
 	display:block;
 	height:68px;
 	width:259px;
-	background:url(/sites/default/themes/smileshoppe/img/assets.png) -1130px 0 no-repeat;
+	background:url(/themes/custom/smileshoppe/img/assets.png) -1130px 0 no-repeat;
 	text-indent:-9999px;
 	float:left;
 	margin:0 20px 20px 0;
@@ -163,7 +163,7 @@ ul.photos {
 	height:0;
 	padding-bottom:71%;
 	width:80%;
-	background:url(/sites/default/themes/smileshoppe/img/logo-w-name.png) 0 0 no-repeat;
+	background:url(/themes/custom/smileshoppe/img/logo-w-name.png) 0 0 no-repeat;
 	background-size:contain;
 	text-indent:-9999px;
 	margin:0;
@@ -193,7 +193,7 @@ ul.photos {
 }
 
 .sidebar .nav a {
-	background:url(/sites/default/themes/smileshoppe/img/assets.png) 2px -42px no-repeat;
+	background:url(/themes/custom/smileshoppe/img/assets.png) 2px -42px no-repeat;
 	background:#f6f6f6;
 	display:block;
 	padding:17px 0 0 17px;
@@ -305,7 +305,7 @@ ul.photos {
 	width:170px;
 	height:0;
 	padding-bottom:151px;
-	background:url(/sites/default/themes/smileshoppe/img/logo-w-name.png) 0 0 no-repeat;
+	background:url(/themes/custom/smileshoppe/img/logo-w-name.png) 0 0 no-repeat;
 	background-size:contain;
 	text-indent:-9999px;
 }
