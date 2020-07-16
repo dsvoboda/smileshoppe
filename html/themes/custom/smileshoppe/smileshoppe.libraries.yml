@@ -7,7 +7,7 @@ smileshoppe.base:
     js/tools/jquery.touchSwipe.min.js: { minified: true, defer: true }
     js/tools/imagesloaded.pkgd.min.js: { minified: true, defer: true }
     js/tools/lazysizes.min.js: { minified: true, async: true }
-    js/init-min.js: { minified: true, defer: true }
+    js/menu-min.js: { minified: true, defer: true }
   dependencies:
     - core/drupal
     - core/jquery
@@ -24,7 +24,3 @@ smileshoppe.page_anchors:
   version: VERSION
   js:
     js/page-anchors-min.js: { minified: true }
-smileshoppe.menu:
-  version: VERSION
-  js:
-    js/menu-min.js: { minified: true }
