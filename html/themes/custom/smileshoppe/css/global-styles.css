@@ -169,30 +169,30 @@ ul.photos {
 	margin:0;
 }
 
-.sidebar .nav {
+.sidebar .menu-main {
 	margin:20px 0;
 }
 
-.sidebar .nav .expanded,.sidebar .nav .collapsed,.sidebar .nav .leaf {
+.sidebar .menu-main .expanded,.sidebar .menu-main .collapsed,.sidebar .menu-main .leaf {
 	padding:0;
 	margin:0;
 }
 
-.sidebar .nav .first a {
+.sidebar .menu-main li:first-child a {
 	-webkit-border-top-left-radius:7px;
 	-moz-border-radius-topleft:7px;
 	border-top-left-radius:7px;
 	border-top:1px solid #fafafa;
 }
 
-.sidebar .nav .last a {
+.sidebar .menu-main li:last-child a {
 	-webkit-border-bottom-left-radius:7px;
 	-moz-border-radius-bottomleft:7px;
 	border-bottom-left-radius:7px;
 	border-bottom:1px solid #ccc;
 }
 
-.sidebar .nav a {
+.sidebar .menu-main a {
 	background:url(/themes/custom/smileshoppe/img/assets.png) 2px -42px no-repeat;
 	background:#f6f6f6;
 	display:block;
@@ -203,22 +203,22 @@ ul.photos {
 .sidebar #block-views-blog-teaser-block {
 	margin-left:17px;
 }
-.front .sidebar .nav .home a,.sidebar .nav .active-trail a,.sidebar .nav a:hover {
+.front .sidebar .menu-main .home a,.sidebar .menu-main .active-trail a,.sidebar .menu-main a:hover {
 	color:#d31145;
 }
 
-.front .sidebar .nav .home a span,.sidebar .nav .active-trail a span {
+.front .sidebar .menu-main .home a span,.sidebar .menu-main .active-trail a span {
 	border-bottom:1px solid #d31145;
 }
 
-.sidebar .nav span {
+.sidebar .menu-main span {
 	font-size:10px;
 	display:block;
 	padding:4px 0 17px;
 	border-bottom:1px solid #929292;
 }
 
-.sidebar .nav .last span,.sidebar .nav .last.active-trail span {
+.sidebar .menu-main .last span,.sidebar .menu-main .last.active-trail span {
 	border-bottom:none;
 }
 
@@ -798,13 +798,13 @@ ul.photos {
 		padding-bottom:151px;
 		margin:0 auto;
 	}
-	.sidebar .nav {
+	.sidebar .menu-main {
 		margin:0;
 	}
-	.sidebar .nav h4 {
+	.sidebar .menu-main h4 {
 		font-size:22px;
 	}
-	.sidebar .nav span {
+	.sidebar .menu-main span {
 		font-size:14px;
 	}
 	.navigation-wrapper {
@@ -834,11 +834,11 @@ ul.photos {
 	.portable-nav-active body {
 		overflow:hidden;
 	}
-	.sidebar .nav a {
+	.sidebar .menu-main a {
 		padding:17px;
 	}
-	.sidebar .nav .first a,
-	.sidebar .nav .last a {
+	.sidebar .menu-main .first a,
+	.sidebar .menu-main .last a {
 		-webkit-border-radius: 0;
 		-moz-border-radius: 0;
 		border-radius: 0;
@@ -881,7 +881,7 @@ ul.photos {
 		visibility: hidden;
 		display:none;
 	}
-	.sidebar .nav a {
+	.sidebar .menu-main a {
 		font-size:larger;
 	}
 }
