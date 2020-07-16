@@ -313,7 +313,7 @@ $settings['hash_salt'] = 'WEgfk4KE6Th1R_2SdK1p_D2Zfc-idUGFIna_WUBclO5-HHH4BLt5da
  * After finishing the upgrade, be sure to open this file again and change the
  * TRUE back to a FALSE!
  */
-$settings['update_free_access'] = FALSE;
+$settings['update_free_access'] = TRUE;
 
 /**
  * External access proxy settings:
