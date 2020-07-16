@@ -24,3 +24,7 @@ smileshoppe.page_anchors:
   version: VERSION
   js:
     js/page-anchors-min.js: { minified: true }
+smileshoppe.menu:
+  version: VERSION
+  js:
+    js/menu-min.js: { minified: true }

@@ -1,0 +1,1 @@
+!function(e){"use strict";Drupal.behaviors.smileshoppe_menu={attach:function(n,t){var a;(a=e(".region-sidebar-first .menu-main")).once("menu-processed").each(function(e){var n=a.find("> li");n.each(function(e){var t=n.find("a"),a=t.attr("title"),i=t.text();t.removeAttr("title"),t.empty(),t.append("<h4>"+i+"</h4>").append("<span>"+a+"</span>")})})}}}(jQuery);
