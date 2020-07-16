@@ -13,6 +13,10 @@ smileshoppe.base:
     - core/jquery
     - core/jquery.once
     - core/drupal.debounce
+smileshoppe.smileshoppe_util:
+  version: VERSION
+  js:
+    js/smileshoppe-min.js: { minified: true }
 smileshoppe.gallery:
   version: VERSION
   css:
@@ -20,10 +24,15 @@ smileshoppe.gallery:
       css/gallery-min.css: { minified: true }
   js:
     js/gallery-min.js: { minified: true }
-smileshoppe.page_anchors:
+smileshoppe.employees:
   version: VERSION
+  css:
+    theme:
+      css/employees-min.css: { minified: true }
+  dependencies:
+    - smileshoppe/smileshoppe.smileshoppe_util
   js:
-    js/page-anchors-min.js: { minified: true }
+    js/employees-min.js: { minified: true }
 bartik.tabs:
   version: VERSION
   css:

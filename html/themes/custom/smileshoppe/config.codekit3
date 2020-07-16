@@ -9,6 +9,16 @@
 	],
 "creatorBuild": "31491",
 "files": {
+	"/css/employees.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/employees-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/css/gallery-min.css": {
 		"aP": 1,
 		"bl": 0,
@@ -61,6 +71,17 @@
 		"oAP": "/build/img",
 		"oF": 0
 		},
+	"/js/employees.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/employees-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"/js/gallery-min.js": {
 		"bF": 0,
 		"ft": 64,
@@ -105,26 +126,15 @@
 		"sC": 0,
 		"tS": 0
 		},
-	"/js/page-anchors-min.js": {
+	"/js/smileshoppe.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/js/page-anchors-min-min.js",
+		"oAP": "/js/smileshoppe-min.js",
 		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/js/page-anchors.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/js/page-anchors-min.js",
-		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"/js/tools": {
