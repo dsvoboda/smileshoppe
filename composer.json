@@ -20,6 +20,7 @@
         "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "^8.8",
         "drupal/imce": "^2.2",
+        "drupal/menu_link_attributes": "^1.1",
         "drupal/pathauto": "^1.8"
     },
     "require-dev": {
