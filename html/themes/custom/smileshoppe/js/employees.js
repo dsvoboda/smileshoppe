@@ -3,8 +3,10 @@
 	
 	Drupal.behaviors.smileshoppe_employees = {
 		attach: function(context, settings) {
-			ss_.gatedAnchors($('#block-views-block-employees-employees'));
-			alert('employees block loaded!');
+			$('#block-views-block-employees-employees').once('anchors').each(function(i) {
+				ss_.gatedAnchors($(this));
+				alert('employees block loaded!');
+			});
 		}
 	}
 	
