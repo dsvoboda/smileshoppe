@@ -42,6 +42,11 @@ smileshoppe.services:
     js/services-min.js: { minified: true }
   dependencies:
     - smileshoppe/smileshoppe.smileshoppe_util
+smileshoppe.faqs:
+  version: VERSION
+  css:
+    theme:
+      css/faqs-min.css: { minified: true }
 bartik.tabs:
   version: VERSION
   css:

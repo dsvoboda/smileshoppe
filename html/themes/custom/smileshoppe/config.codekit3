@@ -29,6 +29,16 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/css/faqs.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/faqs-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/css/gallery-min.css": {
 		"aP": 1,
 		"bl": 0,
@@ -66,6 +76,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/css/global-styles-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/services-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/services-min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
