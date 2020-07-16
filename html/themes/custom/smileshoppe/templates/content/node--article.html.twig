@@ -83,7 +83,7 @@
 <div{{ attributes.addClass(classes).setAttribute('id','node-'~node.id()) }}>
 	{{ title_prefix }}{{ title_suffix }}
 	<div{{ content_attributes.addClass(node.bundle|clean_class ~ '-content').addClass('node-content') }}>
-		<h1 class="title">{{ label }}</h1>
+		<h2 class="title">{{ label }}</h2>
 		<small class="published">{{ node.getCreatedTime()|date('F j, Y @ g:i a') }}</small>
 		{% if node.field_image is not empty %}
 		<div class="page-photo">
