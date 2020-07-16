@@ -170,6 +170,7 @@ ul.photos {
 }
 
 .sidebar .menu-main {
+	list-style:none;
 	margin:20px 0;
 }
 
