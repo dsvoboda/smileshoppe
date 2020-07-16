@@ -135,7 +135,9 @@ ul.photos {
 	float:left;
 	margin:0 20px 20px 0;
 }
-
+.not-front .main span.tagline {
+	display:none;
+}
 /*	Page Photo Styles	*/
 .main .page-photo,
 .main [data-alignment="Right"] .page-photo,
@@ -221,7 +223,7 @@ ul.photos {
 	border-bottom:1px solid #929292;
 }
 
-.sidebar .menu-main .last span,.sidebar .menu-main .last.active-trail span {
+.sidebar .menu-main li:last-child span {
 	border-bottom:none;
 }
 
