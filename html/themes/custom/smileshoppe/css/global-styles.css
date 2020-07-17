@@ -47,7 +47,9 @@ body {
 	font-size:16px;
 	background:#FFF;
 }
-
+.front .page-header {
+	display:none;
+}
 h1 {
 	font-size:30px;
 	margin:20px 0;
