@@ -1,6 +1,8 @@
 (function ($) {
 	'use strict';
 	
+	var interval;
+	
 	Drupal.behaviors.smileshoppe_rotating_photos = {
 		attach: function(context, settings) {
 			setupPhotos($('#block-views-block-rotating-photos-block-1'));
@@ -23,7 +25,21 @@
 				$item_list.remove();
 			});
 			$block.addClass('rotate-init');
+			startRotation($block);
 		});
+	}
+	
+	function startRotation($block) {
+		interval = setInterval(shuffle, 1000);
+		
+		function shuffle() {
+			var $i = $block.find('img.init:last-child');
+			$i.addClass('ninja-vanish');
+			setTimeout(function() {
+				$i.insertAfter($block.find('img.sentinel'));
+				$i.removeClass('ninja-vanish');
+			}, 500);
+		}
 	}
 	
 }(jQuery));
