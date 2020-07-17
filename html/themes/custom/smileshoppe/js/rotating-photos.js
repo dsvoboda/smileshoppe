@@ -2,6 +2,8 @@
 	'use strict';
 	
 	var interval;
+	var display_interval = 6000;
+	var fade_interval = 500;
 	
 	Drupal.behaviors.smileshoppe_rotating_photos = {
 		attach: function(context, settings) {
@@ -30,7 +32,7 @@
 	}
 	
 	function startRotation($block) {
-		interval = setInterval(shuffle, 1000);
+		interval = setInterval(shuffle, display_interval);
 		
 		function shuffle() {
 			var $i = $block.find('img.init:last-child');
@@ -38,7 +40,7 @@
 			setTimeout(function() {
 				$i.insertAfter($block.find('img.sentinel'));
 				$i.removeClass('ninja-vanish');
-			}, 500);
+			}, fade_interval);
 		}
 	}
 	
