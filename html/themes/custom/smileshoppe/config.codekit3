@@ -89,6 +89,16 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/css/region-sub-content.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/region-sub-content-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/css/rotating-photos-min.css": {
 		"aP": 1,
 		"bl": 0,
@@ -205,6 +215,17 @@
 		"oAP": "/js/menu-min.js",
 		"oF": 0,
 		"sC": 0,
+		"tS": 0
+		},
+	"/js/rotating-photos-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/rotating-photos-min-min.js",
+		"oF": 0,
+		"sC": 3,
 		"tS": 0
 		},
 	"/js/rotating-photos.js": {

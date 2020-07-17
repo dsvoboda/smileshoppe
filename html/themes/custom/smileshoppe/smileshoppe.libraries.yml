@@ -59,3 +59,8 @@ bartik.tabs:
   css:
     theme:
       css/tools/bartik-tabs.css: { minified: false }
+smileshoppe.sub_content:
+  version: VERSION
+  css:
+    theme:
+      css/region-sub-content-min.css: { minified: true }
