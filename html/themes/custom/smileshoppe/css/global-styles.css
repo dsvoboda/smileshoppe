@@ -141,18 +141,9 @@ ul.photos {
 	display:none;
 }
 /*	Page Photo Styles	*/
-.main .page-photo,
-.main [data-alignment="Right"] .page-photo,
-.main [data-alignment="right"] .page-photo,
-.main .photo-right .page-photo {
+.main .page-photo {
 	float:right;
 	margin:0 0 20px 20px;
-}
-.main [data-alignment="Left"] .page-photo,
-.main [data-alignment="left"] .page-photo,
-.main .photo-left .page-photo {
-	float:left;
-	margin:0 20px 20px 0;
 }
 /*	Sidebar Styles	*/
 .sidebar {
