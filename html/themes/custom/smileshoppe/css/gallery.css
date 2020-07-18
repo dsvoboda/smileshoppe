@@ -11,15 +11,22 @@
 	bottom:0;
 	background:#FF0000;
 	color:#FFF;
+	vertical-align:middle;
+	line-height:40px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	padding:6px;
 }
 #block-views-block-gallery-gallery.ready .next {
 	right:0;
+	text-align:right;
 }
 #block-views-block-gallery-gallery.ready .next:before {
 	content: "Next";
 }
 #block-views-block-gallery-gallery.ready .prev {
 	left:0;
+	text-align:left;
 }
 #block-views-block-gallery-gallery.ready .prev:before {
 	content: "Previous";
