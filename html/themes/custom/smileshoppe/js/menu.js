@@ -31,6 +31,18 @@
 					$trigger.html("☰ Navigation");
 				}
 			});
+			$menu.swipe( {
+				swipeLeft:function(event, direction, distance, duration, fingerCount) {
+					if(direction == "left"){
+						event.preventDefault();
+						$('html').removeClass('portable-nav-active');
+						$trigger.html("☰ Navigation");
+					}
+				},
+				fingers:1,
+				threshold:10,
+				excludedElements: 'button, input, select, textarea, .noswipe'
+			});
 			$menu.addClass('menu-processed');
 		});
 	}
