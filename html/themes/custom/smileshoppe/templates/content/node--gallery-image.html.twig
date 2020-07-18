@@ -82,5 +82,14 @@
 %}
 <div{{ attributes.addClass(classes).setAttribute('id','node-'~node.id()).setAttribute('data-before',file_url(node.field_before_image.entity.uri.value)).setAttribute('data-after',file_url(node.field_after_image.entity.uri.value)).setAttribute('data-id',node.id()).setAttribute('data-category',node.field_category.target_id) }}>
 	{{ title_prefix }}{{ title_suffix }}
-	
+	<h2>{{ label }}</h2>
+	<p>Before</p>
+	{{ content.field_before_image }}
+	<hr />
+	<p>After</p>
+	{{ content.field_after_image }}
+	<hr />
+	<div class="description">
+		{{ content.body }}
+	</div>
 </div>
