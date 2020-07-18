@@ -45,7 +45,7 @@
 			if(prev >= 0) {
 				$wrapper.find('[data-id="' + $images[prev] + '"]').addClass('active');
 			} else {
-				$wrapper.find('[data-id="' + $images[$images.length] + '"]').addClass('active');
+				$wrapper.find('[data-id="' + $images[parseInt($images.length - 1)] + '"]').addClass('active');
 			}
 			$wrapper.attr('data-index',$wrapper.find('.active').attr('data-id'));
 		});
