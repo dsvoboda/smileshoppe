@@ -785,7 +785,7 @@ ul.photos {
 	.maintenance-page .portable-trigger {
 		display:none;
 	}
-	.navigation-wrapper .portable-trigger {
+	#block-smileshoppe-main-menu .portable-trigger {
 		top:10px;
 		right:15px;
 		bottom:auto;
@@ -811,7 +811,7 @@ ul.photos {
 	.sidebar .menu-main span {
 		font-size:14px;
 	}
-	.navigation-wrapper {
+	#block-smileshoppe-main-menu {
 		position:fixed;
 		top:40px;
 		bottom:0;
@@ -829,7 +829,7 @@ ul.photos {
 		z-index:9999;
 		padding-bottom:50px;
 	}
-	.portable-nav-active .navigation-wrapper {
+	.portable-nav-active #block-smileshoppe-main-menu {
 		display:block;
 		left:0;
 		overflow:scroll;
@@ -841,8 +841,8 @@ ul.photos {
 	.sidebar .menu-main a {
 		padding:17px;
 	}
-	.sidebar .menu-main .first a,
-	.sidebar .menu-main .last a {
+	.sidebar .menu-main li:first-child a,
+	.sidebar .menu-main li:last-child a {
 		-webkit-border-radius: 0;
 		-moz-border-radius: 0;
 		border-radius: 0;
