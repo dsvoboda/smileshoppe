@@ -8,6 +8,7 @@
 			$(context).find('.item-list-wrapper').once('gallery-setup').each(function(i) {
 				$images = [];
 				setupGallery($(this));
+				setHeight($(this));
 			});
 		}
 	}
@@ -52,7 +53,6 @@
 			setHeight($wrapper);
 		});
 		$('#block-views-block-gallery-gallery').addClass('ready');
-		setHeight($wrapper);
 	}
 	
 	function setHeight($wrapper) {
