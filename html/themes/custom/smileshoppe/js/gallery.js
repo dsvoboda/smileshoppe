@@ -22,8 +22,8 @@
 	function imageSetup($elem) {
 		var $before = $elem.find('.before');
 		var $after = $elem.find('.after');
-		$before.attr('background-image','url(' + $before.find('img').attr('src') + ');');
-		$after.attr('background-image','url(' + $after.find('img').attr('src') + ');');
+		$before.css('background-image','url(' + $before.find('img').attr('src') + ');');
+		$after.css('background-image','url(' + $after.find('img').attr('src') + ');');
 		$elem.remove('img');
 		$elem.addClass('init');
 	}
