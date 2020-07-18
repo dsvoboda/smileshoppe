@@ -8,7 +8,11 @@
 			$(context).find('.item-list-wrapper').once('gallery-setup').each(function(i) {
 				$images = [];
 				setupGallery($(this));
-				window.addEventListener('resize', _.throttle(setHeight, 16), false);
+				var debounce = Drupal.debounce(function() {
+					setHeight($(this));
+				}, 250);
+				
+				window.addEventListener('resize', debounce);
 			});
 		}
 	}
@@ -58,8 +62,7 @@
 		});
 	}
 	
-	function setHeight() {
-		var $wrapper = $('#block-views-block-gallery-gallery').find('.item-list-wrapper');
+	function setHeight($wrapper) {
 		$wrapper.css('height',maxHeight($wrapper));
 	}
 	
