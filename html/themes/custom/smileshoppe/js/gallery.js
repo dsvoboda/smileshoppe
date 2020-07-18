@@ -30,7 +30,7 @@
 		$wrapper.find('.next').click(function(e) {
 			e.preventDefault();
 			$wrapper.find('.type-gallery-image').removeClass('active');
-			var next = parseInt($images.indexOf($wrapper.attr('data-index')) + 1);
+			var next = parseInt($images.indexOf($wrapper.attr('data-index') + 1));
 			if(next <= $images.length) {
 				$wrapper.find('[data-id="' + next + '"]').addClass('active');
 			} else {
