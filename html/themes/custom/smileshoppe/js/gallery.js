@@ -3,7 +3,7 @@
 	
 	Drupal.behaviors.smileshoppe_gallery = {
 		attach: function(context, settings) {
-			$('#block-views-block-gallery-gallery', context).each(function(i) {
+			$('#block-views-block-gallery-gallery', context).once('gallery-setup').each(function(i) {
 				var $block = $(this);
 				var $items = $block.find('.item-list .type-gallery-image');
 				var $wrapper = $block.find('.item-list-wrapper');
