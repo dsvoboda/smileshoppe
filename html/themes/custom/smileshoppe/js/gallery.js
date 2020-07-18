@@ -12,7 +12,7 @@
 			var $items = $block.find('.item-list .type-gallery-image');
 			var $wrapper = $block.find('.item-list-wrapper');
 			$items.each(function(a) {
-				imageFactory($(this));
+				imageSetup($(this));
 				$(this).appendTo($wrapper);
 			});
 			$block.find('.item-list').remove();
