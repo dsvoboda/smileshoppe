@@ -8,6 +8,21 @@
 	position:absolute;
 	height:40px;
 	width:50%;
+	bottom:0;
+	background:#FF0000;
+	color:#FFF;
+}
+#block-views-block-gallery-gallery.ready .next {
+	right:0;
+}
+#block-views-block-gallery-gallery.ready .next:before {
+	content: "Next";
+}
+#block-views-block-gallery-gallery.ready .prev {
+	left:0;
+}
+#block-views-block-gallery-gallery.ready .prev:before {
+	content: "Previous";
 }
 #block-views-block-gallery-gallery.ready .item-list-wrapper .type-gallery-image.init {
 	position:absolute;
