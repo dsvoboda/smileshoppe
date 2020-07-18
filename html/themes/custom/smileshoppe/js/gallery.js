@@ -7,9 +7,10 @@
 		attach: function(context, settings) {
 			$(context).find('.item-list-wrapper').once('gallery-setup').each(function(i) {
 				$images = [];
-				setupGallery($(this));
+				var $wrapper = $(this);
+				setupGallery($wrapper);
 				var debounce = Drupal.debounce(function() {
-					setHeight($(this));
+					setHeight($wrapper);
 				}, 250);
 				
 				window.addEventListener('resize', debounce);
