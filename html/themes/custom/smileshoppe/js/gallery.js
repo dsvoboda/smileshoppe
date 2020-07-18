@@ -40,6 +40,14 @@
 		});
 		$wrapper.find('.prev').click(function(e) {
 			e.preventDefault();
+			$wrapper.find('.type-gallery-image').removeClass('active');
+			var prev = parseInt($images.indexOf($wrapper.attr('data-index')) - 1);
+			if(prev > -1) {
+				$wrapper.find('[data-id="' + $images[prev] + '"]').addClass('active');
+			} else {
+				$wrapper.find('[data-id="' + $images[$images.length] + '"]').addClass('active');
+			}
+			$wrapper.attr('data-index',$wrapper.find('.active').attr('data-id'));
 		});
 		$('#block-views-block-gallery-gallery').addClass('ready');
 	}
