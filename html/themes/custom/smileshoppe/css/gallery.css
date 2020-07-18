@@ -91,3 +91,10 @@
 .type-gallery-image.init .information {
 	padding:10px;
 }
+#block-views-block-gallery-gallery .form-content {
+	margin-bottom:20px;
+}
+#block-views-block-gallery-gallery .form-item,
+#block-views-block-gallery-gallery .form-actions {
+	display:inline-block;
+}
