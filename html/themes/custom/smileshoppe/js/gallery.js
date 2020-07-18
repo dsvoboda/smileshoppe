@@ -58,9 +58,9 @@
 		$wrapper.css('height',maxHeight());
 	}
 	
-	function maxHeight() {
+	function maxHeight($wrapper) {
 		var max_height = 0;
-		$('#block-views-block-gallery-gallery').find('.type-gallery-image').each(function(i) {
+		$wrapper.find('.type-gallery-image').each(function(i) {
 			if($(this).outerHeight() > max_height) {
 				max_height = $(this).outerHeight();
 			}
