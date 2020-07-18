@@ -24,7 +24,7 @@
 		var $after = $elem.find('.after');
 		$before.css('background-image','url(' + $before.find('img').attr('src') + ');');
 		$after.css('background-image','url(' + $after.find('img').attr('src') + ');');
-		$elem.remove('img');
+		$elem.find('img').remove();
 		$elem.addClass('init');
 	}
 	
