@@ -20,16 +20,17 @@
 		});
 		$wrapper.find('.item-list').remove();
 		$wrapper.attr('data-index',$wrapper.find(':first-child').attr('data-id'));
-		$wrapper.find('[data-index="' + $wrapper.attr('data-index') + '"]').addClass('active');
+		$wrapper.find('[data-id="' + $wrapper.attr('data-index') + '"]').addClass('active');
 		$wrapper.find('.next').click(function(e) {
 			e.preventDefault();
 			$wrapper.find('.type-gallery-image').removeClass('active');
 			var next = parseInt($images.indexOf($wrapper.attr('data-index')) + 1);
 			if(next <= $images.length) {
-				$wrapper.find('[data-index="' + next + '"]').addClass('active');
+				$wrapper.find('[data-id="' + next + '"]').addClass('active');
 			} else {
-				$wrapper.find('[data-index="' + $wrapper.attr('data-index') + '"]').addClass('active');
+				$wrapper.find('[data-id="' + $wrapper.attr('data-index') + '"]').addClass('active');
 			}
+			$wrapper.attr('data-index',$wrapper.find('.active').attr('data-id'));
 		});
 		$wrapper.find('.prev').click(function(e) {
 			e.preventDefault();
