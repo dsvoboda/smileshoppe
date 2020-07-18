@@ -3,18 +3,20 @@
 	
 	Drupal.behaviors.smileshoppe_gallery = {
 		attach: function(context, settings) {
-			$('#block-views-block-gallery-gallery', context).once('gallery-setup').each(function(i) {
-				var $block = $(this);
-				var $items = $block.find('.item-list .type-gallery-image');
-				var $wrapper = $block.find('.item-list-wrapper');
-				$items.each(function(a) {
-					imageSetup($(this));
-					$(this).appendTo($wrapper);
-				});
-				$block.find('.item-list').remove();
-				$block.addClass('ready');
+			$('#block-views-block-gallery-gallery').once('gallery-setup').each(function(i) {
+				setupGallery($(this));
 			});
 		}
+	}
+	function setupGallery($block) {
+		var $items = $('.item-list .type-gallery-image', context);
+		var $wrapper = $('.item-list-wrapper', context);
+		$items.each(function(a) {
+			imageSetup($(this));
+			$(this).appendTo($wrapper);
+		});
+		$('.item-list',context).remove();
+		$block.addClass('ready');
 	}
 	
 	function imageSetup($elem) {
