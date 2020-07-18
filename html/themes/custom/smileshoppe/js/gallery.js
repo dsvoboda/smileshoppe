@@ -27,6 +27,7 @@
 		}));
 		$wrapper.attr('data-index',$wrapper.find(':first-child').attr('data-id'));
 		$wrapper.find('[data-id="' + $wrapper.attr('data-index') + '"]').addClass('active');
+		setHeight($wrapper);
 		$wrapper.find('.next').click(function(e) {
 			e.preventDefault();
 			$wrapper.find('.type-gallery-image').removeClass('active');
