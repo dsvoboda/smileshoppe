@@ -5,8 +5,7 @@
 	
 	Drupal.behaviors.smileshoppe_gallery = {
 		attach: function(context, settings) {
-			alert(context);
-			$('#' + $block.attr('id') + ' .item-list-wrapper', context).once('gallery-setup').each(function(i) {
+			$(context).find('.item-list-wrapper').once('gallery-setup').each(function(i) {
 				setupGallery($(this));
 				alert('executed');
 			});
