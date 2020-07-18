@@ -1,4 +1,11 @@
 /* Gallery CSS */
+#block-views-block-gallery-gallery {
+	opacity:0;
+	transition:opacity .3s ease-in-out;
+}
+#block-views-block-gallery-gallery.ready {
+	opacity:1;
+}
 #block-views-block-gallery-gallery.ready .item-list-wrapper {
 	position:relative;
 	padding-bottom:40px;
