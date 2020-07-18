@@ -57,7 +57,7 @@
 					$wrapper.attr('data-index',$wrapper.find('.active').attr('data-id'));
 				});
 			}
-			setHeight();
+			setHeight($wrapper);
 			$wrapper.addClass('ready');
 		});
 	}
