@@ -23,7 +23,7 @@
 			'class' : 'next'
 		}));
 		$wrapper.append($('<div />', {
-			'class' : 'previous'
+			'class' : 'prev'
 		}));
 		$wrapper.attr('data-index',$wrapper.find(':first-child').attr('data-id'));
 		$wrapper.find('[data-id="' + $wrapper.attr('data-index') + '"]').addClass('active');
