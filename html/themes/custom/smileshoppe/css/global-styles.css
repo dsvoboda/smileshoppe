@@ -855,6 +855,7 @@ img {
 		float:none;
 		margin:20px auto;
 		width:auto;
+		text-align:center;
 	}
 	.page-photo img {
 		width:auto;
