@@ -37,6 +37,7 @@
 				$wrapper.find('[data-id="' + $images[0] + '"]').addClass('active');
 			}
 			$wrapper.attr('data-index',$wrapper.find('.active').attr('data-id'));
+			setHeight($wrapper);
 		});
 		$wrapper.find('.prev').click(function(e) {
 			e.preventDefault();
@@ -48,8 +49,13 @@
 				$wrapper.find('[data-id="' + $images[parseInt($images.length - 1)] + '"]').addClass('active');
 			}
 			$wrapper.attr('data-index',$wrapper.find('.active').attr('data-id'));
+			setHeight($wrapper);
 		});
 		$('#block-views-block-gallery-gallery').addClass('ready');
+	}
+	
+	function setHeight($wrapper) {
+		$wrapper.css('height',$wrapper.find('.active').outerHeight());
 	}
 	
 	function imageSetup($elem) {
