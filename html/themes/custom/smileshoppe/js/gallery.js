@@ -7,7 +7,7 @@
 		attach: function(context, settings) {
 			$(context).find('.item-list-wrapper').once('gallery-setup').each(function(i) {
 				$images = [];
-				$gallery = setupGallery($(this));
+				var $gallery = setupGallery($(this));
 				setHeight($gallery);
 			});
 		}
