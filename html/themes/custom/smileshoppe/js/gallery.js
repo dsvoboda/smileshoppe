@@ -50,8 +50,8 @@
 				}
 				$wrapper.attr('data-index',$wrapper.find('.active').attr('data-id'));
 			});
-			$('#block-views-block-gallery-gallery').addClass('ready');
 			setHeight($wrapper);
+			$wrapper.addClass('ready');
 		});
 	}
 	
