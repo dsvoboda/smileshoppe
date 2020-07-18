@@ -1,1 +1,1 @@
-!function(e){"use strict";Drupal.behaviors.smileshoppe_gallery={attach:function(e,t){}}}(jQuery);
+!function(e){"use strict";Drupal.behaviors.smileshoppe_gallery={attach:function(i,t){var a;(a=e("#block-views-block-gallery-gallery")).once("gallery-setup").each(function(i){var t=a.find(".item-list .type-gallery-image"),l=a.find(".item-list-wrapper");t.each(function(i){imageFactory(e(this)),e(this).appendTo(l)}),a.find(".item-list").remove()})}}}(jQuery);
