@@ -8,6 +8,7 @@
 			$(context).find('.item-list-wrapper').once('gallery-setup').each(function(i) {
 				$images = [];
 				setupGallery($(this));
+				window.addEventListener('resize', _.throttle(setHeight, 16), false);
 			});
 		}
 	}
@@ -58,6 +59,9 @@
 	}
 	
 	function setHeight($wrapper) {
+		if(!$wrapper) {
+			$wrapper = $('#block-views-block-gallery-gallery').find('.item-list-wrapper');
+		}
 		$wrapper.css('height',maxHeight($wrapper));
 	}
 	
