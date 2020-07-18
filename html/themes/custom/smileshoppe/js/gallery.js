@@ -1,8 +1,6 @@
 (function ($) {
 	'use strict';
 	
-	var $block = $('#block-views-block-gallery-gallery');
-	
 	Drupal.behaviors.smileshoppe_gallery = {
 		attach: function(context, settings) {
 			$(context).find('.item-list-wrapper').once('gallery-setup').each(function(i) {
@@ -18,7 +16,7 @@
 			$(this).appendTo($wrapper);
 		});
 		$wrapper.find('.item-list').remove();
-		$block.addClass('ready');
+		$('#block-views-block-gallery-gallery').addClass('ready');
 	}
 	
 	function imageSetup($elem) {
