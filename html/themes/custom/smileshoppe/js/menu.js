@@ -24,7 +24,7 @@
 			$('body').prepend($trigger);
 			$trigger.click(function(e) {
 				e.preventDefault();
-				$('html').toggleClass('.portable-nav-active');
+				$('html').toggleClass('portable-nav-active');
 			});
 			$menu.addClass('menu-processed');
 		});
