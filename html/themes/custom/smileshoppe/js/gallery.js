@@ -17,12 +17,12 @@
 			});
 			$block.find('.item-list').remove();
 		});
+		$block.addClass('ready');
 	}
 	
 	function imageSetup($elem) {
 		var $before = $elem.find('.before');
 		var $after = $elem.find('.after');
-		$before.css('background-color','#FF0000');
 		$before.css('background-image','url(' + $before.find('img').attr('src') + ')');
 		$after.css('background-image','url(' + $after.find('img').attr('src') + ')');
 		$elem.find('img').remove();
