@@ -850,8 +850,8 @@ img {
 	}
 }
 @media only screen and (max-width:600px) {
-	.item-list li:nth-child(2n-1) .page-photo,
-	.item-list li:nth-child(2n-1) .page-photo {
+	.main .item-list li:nth-child(2n-1) .page-photo,
+	.main .item-list li:nth-child(2n-1) .page-photo {
 		float:none;
 		margin:20px auto;
 		width:auto;
