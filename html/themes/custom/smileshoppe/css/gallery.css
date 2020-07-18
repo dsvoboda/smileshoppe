@@ -18,8 +18,14 @@
 	height:100%;
 	width:50%;
 	margin:0;
-	display:inline-block;
-	position:relative;
+	position:absolute;
+	top:0;
+}
+.type-gallery-image.init .before {
+	left:0;
+}
+.type-gallery-image.init .after {
+	right:0;
 }
 .type-gallery-image.init .before:before,
 .type-gallery-image.init .after:before {
