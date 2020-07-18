@@ -56,7 +56,7 @@
 	}
 	
 	function setHeight($wrapper) {
-		$wrapper.css('height',maxHeight());
+		$wrapper.css('height',maxHeight($wrapper));
 	}
 	
 	function maxHeight($wrapper) {
