@@ -7,56 +7,54 @@
 		attach: function(context, settings) {
 			$(context).find('.item-list-wrapper').once('gallery-setup').each(function(i) {
 				$images = [];
-				var $gallery = setupGallery($(this));
-				setHeight($gallery);
+				$(window).load(function() {
+					setupGallery($(this));
+					setHeight($(this));
+				});
 			});
 		}
 	}
 	
 	function setupGallery($wrapper) {
-		let gallery = new Promise(function(resolve,reject) {
-			var $items = $wrapper.find('.type-gallery-image');
-			$items.each(function(a) {
-				imageSetup($(this));
-				$(this).appendTo($wrapper);
-			});
-			$wrapper.find('.item-list').remove();
-			$wrapper.append($('<div />', {
-				'class' : 'next'
-			}));
-			$wrapper.append($('<div />', {
-				'class' : 'prev'
-			}));
-			$wrapper.attr('data-index',$wrapper.find(':first-child').attr('data-id'));
-			$wrapper.find('[data-id="' + $wrapper.attr('data-index') + '"]').addClass('active');
-			$wrapper.find('.next').click(function(e) {
-				e.preventDefault();
-				$wrapper.find('.type-gallery-image').removeClass('active');
-				var next = parseInt($images.indexOf($wrapper.attr('data-index')) + 1);
-				if(next < $images.length) {
-					$wrapper.find('[data-id="' + $images[next] + '"]').addClass('active');
-				} else {
-					$wrapper.find('[data-id="' + $images[0] + '"]').addClass('active');
-				}
-				$wrapper.attr('data-index',$wrapper.find('.active').attr('data-id'));
-				setHeight($wrapper);
-			});
-			$wrapper.find('.prev').click(function(e) {
-				e.preventDefault();
-				$wrapper.find('.type-gallery-image').removeClass('active');
-				var prev = parseInt($images.indexOf($wrapper.attr('data-index')) - 1);
-				if(prev >= 0) {
-					$wrapper.find('[data-id="' + $images[prev] + '"]').addClass('active');
-				} else {
-					$wrapper.find('[data-id="' + $images[parseInt($images.length - 1)] + '"]').addClass('active');
-				}
-				$wrapper.attr('data-index',$wrapper.find('.active').attr('data-id'));
-				setHeight($wrapper);
-			});
-			$('#block-views-block-gallery-gallery').addClass('ready');
-			resolve($wrapper);
+		var $items = $wrapper.find('.type-gallery-image');
+		$items.each(function(a) {
+			imageSetup($(this));
+			$(this).appendTo($wrapper);
 		});
-		return gallery;
+		$wrapper.find('.item-list').remove();
+		$wrapper.append($('<div />', {
+			'class' : 'next'
+		}));
+		$wrapper.append($('<div />', {
+			'class' : 'prev'
+		}));
+		$wrapper.attr('data-index',$wrapper.find(':first-child').attr('data-id'));
+		$wrapper.find('[data-id="' + $wrapper.attr('data-index') + '"]').addClass('active');
+		$wrapper.find('.next').click(function(e) {
+			e.preventDefault();
+			$wrapper.find('.type-gallery-image').removeClass('active');
+			var next = parseInt($images.indexOf($wrapper.attr('data-index')) + 1);
+			if(next < $images.length) {
+				$wrapper.find('[data-id="' + $images[next] + '"]').addClass('active');
+			} else {
+				$wrapper.find('[data-id="' + $images[0] + '"]').addClass('active');
+			}
+			$wrapper.attr('data-index',$wrapper.find('.active').attr('data-id'));
+			setHeight($wrapper);
+		});
+		$wrapper.find('.prev').click(function(e) {
+			e.preventDefault();
+			$wrapper.find('.type-gallery-image').removeClass('active');
+			var prev = parseInt($images.indexOf($wrapper.attr('data-index')) - 1);
+			if(prev >= 0) {
+				$wrapper.find('[data-id="' + $images[prev] + '"]').addClass('active');
+			} else {
+				$wrapper.find('[data-id="' + $images[parseInt($images.length - 1)] + '"]').addClass('active');
+			}
+			$wrapper.attr('data-index',$wrapper.find('.active').attr('data-id'));
+			setHeight($wrapper);
+		});
+		$('#block-views-block-gallery-gallery').addClass('ready');
 	}
 	
 	function setHeight($wrapper) {
