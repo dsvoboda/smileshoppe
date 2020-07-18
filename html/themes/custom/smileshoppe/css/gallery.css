@@ -1,6 +1,13 @@
 /* Gallery CSS */
 #block-views-block-gallery-gallery.ready .item-list-wrapper {
 	position:relative;
+	padding-bottom:40px;
+}
+#block-views-block-gallery-gallery.ready .next,
+#block-views-block-gallery-gallery.ready .prev {
+	position:absolute;
+	height:40px;
+	width:50%;
 }
 #block-views-block-gallery-gallery.ready .item-list-wrapper .type-gallery-image.init {
 	position:absolute;
@@ -8,6 +15,11 @@
 	left:0;
 	width:100%;
 	background-color:#f4f4f4;
+	opacity:0;
+	transition:opacity .5s ease-in-out;
+}
+#block-views-block-gallery-gallery.ready .item-list-wrapper .type-gallery-image.init.active {
+	opacity:1;
 }
 .type-gallery-image.init .images {
 	position:relative;
