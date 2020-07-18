@@ -38,7 +38,6 @@
 					$wrapper.find('[data-id="' + $images[0] + '"]').addClass('active');
 				}
 				$wrapper.attr('data-index',$wrapper.find('.active').attr('data-id'));
-				setHeight($wrapper);
 			});
 			$wrapper.find('.prev').click(function(e) {
 				e.preventDefault();
@@ -50,15 +49,23 @@
 					$wrapper.find('[data-id="' + $images[parseInt($images.length - 1)] + '"]').addClass('active');
 				}
 				$wrapper.attr('data-index',$wrapper.find('.active').attr('data-id'));
-				setHeight($wrapper);
 			});
 			$('#block-views-block-gallery-gallery').addClass('ready');
-			setHeight($(this));
 		});
 	}
 	
 	function setHeight($wrapper) {
-		$wrapper.css('height',$wrapper.find('.active').outerHeight());
+		$wrapper.css('height',maxHeight());
+	}
+	
+	function maxHeight() {
+		var max_height = 0;
+		$('#block-views-block-gallery-gallery').find('.type-gallery-image').each(function(i) {
+			if($(this).outerHeight() > max_height) {
+				max_height = $(this).outerHeight();
+			}
+		});
+		return max_height;
 	}
 	
 	function imageSetup($elem) {
