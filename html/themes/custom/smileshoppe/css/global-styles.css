@@ -145,7 +145,7 @@ ul.photos {
 	float:right;
 	margin:0 0 20px 20px;
 }
-.main img {
+img {
 	max-width:100%;
 	height:auto;
 	vertical-align:text-bottom;
