@@ -7,10 +7,8 @@
 		attach: function(context, settings) {
 			$(context).find('.item-list-wrapper').once('gallery-setup').each(function(i) {
 				$images = [];
-				$(window).load(function() {
-					setupGallery($(this));
-					setHeight($(this));
-				});
+				setupGallery($(this));
+				setHeight($(this));
 			});
 		}
 	}
@@ -58,7 +56,9 @@
 	}
 	
 	function setHeight($wrapper) {
-		$wrapper.css('height',$wrapper.find('.active').outerHeight());
+		$wrapper.imagesLoaded( function() {
+			$wrapper.css('height',$wrapper.find('.active').outerHeight());
+		});
 	}
 	
 	function imageSetup($elem) {
