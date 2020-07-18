@@ -8,13 +8,18 @@
 	left:0;
 	width:100%;
 }
+.type-gallery-image.init .images {
+	position:relative;
+	font-size:0;
+	padding-top:30%;
+}
 .type-gallery-image.init .before,
 .type-gallery-image.init .after {
-	height:0;
+	height:100%;
 	width:50%;
 	margin:0;
 	display:inline-block;
-	padding-top:30%;
+	position:relative;
 }
 .type-gallery-image.init .before:before,
 .type-gallery-image.init .after:before {

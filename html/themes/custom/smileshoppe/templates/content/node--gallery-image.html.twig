@@ -83,13 +83,15 @@
 <div{{ attributes.addClass(classes).setAttribute('id','node-'~node.id()).setAttribute('data-id',node.id()).setAttribute('data-category',node.field_category.target_id) }}>
 	{{ title_prefix }}{{ title_suffix }}
 	<h2>{{ label }}</h2>
-	<div class="before">
-		<p><strong>Before</strong></p>
-		<img src="{{ file_url(node.field_before_image.entity.uri.value) }}" alt="" />
-	</div>
-	<div class="after">
-		<p><strong>After</strong></p>
-		<img src="{{ file_url(node.field_after_image.entity.uri.value) }}" alt="" />
+	<div class="images">
+		<div class="before">
+			<p><strong>Before</strong></p>
+			<img src="{{ file_url(node.field_before_image.entity.uri.value) }}" alt="" />
+		</div>
+		<div class="after">
+			<p><strong>After</strong></p>
+			<img src="{{ file_url(node.field_after_image.entity.uri.value) }}" alt="" />
+		</div>
 	</div>
 	<div class="description">
 		{{ content.body }}
