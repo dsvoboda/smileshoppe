@@ -53,15 +53,13 @@
 					$wrapper.attr('data-index',$wrapper.find('.active').attr('data-id'));
 				});
 			}
-			setHeight($wrapper);
+			setHeight();
 			$wrapper.addClass('ready');
 		});
 	}
 	
-	function setHeight($wrapper) {
-		if(!$wrapper) {
-			$wrapper = $('#block-views-block-gallery-gallery').find('.item-list-wrapper');
-		}
+	function setHeight() {
+		var $wrapper = $('#block-views-block-gallery-gallery').find('.item-list-wrapper');
 		$wrapper.css('height',maxHeight($wrapper));
 	}
 	
