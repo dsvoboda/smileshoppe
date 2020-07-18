@@ -19,6 +19,12 @@
 			$(this).appendTo($wrapper);
 		});
 		$wrapper.find('.item-list').remove();
+		$wrapper.append($('<div />', {
+			'class' : 'next'
+		}));
+		$wrapper.append($('<div />', {
+			'class' : 'previous'
+		}));
 		$wrapper.attr('data-index',$wrapper.find(':first-child').attr('data-id'));
 		$wrapper.find('[data-id="' + $wrapper.attr('data-index') + '"]').addClass('active');
 		$wrapper.find('.next').click(function(e) {
