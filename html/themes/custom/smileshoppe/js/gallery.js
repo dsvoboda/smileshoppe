@@ -1,9 +1,11 @@
 (function ($) {
 	'use strict';
 	
+	var $block = $('#block-views-block-gallery-gallery');
+	
 	Drupal.behaviors.smileshoppe_gallery = {
 		attach: function(context, settings) {
-			$('#block-views-block-gallery-gallery .item-list-wrapper', context).once('gallery-setup').each(function(i) {
+			$('#' + $block.attr('id') + ' .item-list-wrapper', context).once('gallery-setup').each(function(i) {
 				setupGallery($(this));
 			});
 		}
@@ -16,7 +18,7 @@
 			$(this).appendTo($wrapper);
 		});
 		$wrapper.find('.item-list').remove();
-		$wrapper.addClass('ready');
+		$block.addClass('ready');
 	}
 	
 	function imageSetup($elem) {
