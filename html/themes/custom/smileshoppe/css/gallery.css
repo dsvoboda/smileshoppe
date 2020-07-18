@@ -1,5 +1,5 @@
 /* Gallery CSS */
-#block-views-block-gallery-gallery.ready {
+#block-views-block-gallery-gallery.ready .item-list-wrapper {
 	position:relative;
 }
 #block-views-block-gallery-gallery.ready .type-gallery-image.init {
