@@ -20,6 +20,8 @@
 				$(this).appendTo($wrapper);
 			});
 			$wrapper.find('.item-list').remove();
+			$wrapper.attr('data-index',$wrapper.find(':first-child').attr('data-id'));
+			$wrapper.find('[data-id="' + $wrapper.attr('data-index') + '"]').addClass('active');
 			if($items.length > 1) {
 				$wrapper.append($('<div />', {
 					'class' : 'next'
@@ -27,8 +29,6 @@
 				$wrapper.append($('<div />', {
 					'class' : 'prev'
 				}));
-				$wrapper.attr('data-index',$wrapper.find(':first-child').attr('data-id'));
-				$wrapper.find('[data-id="' + $wrapper.attr('data-index') + '"]').addClass('active');
 				$wrapper.find('.next').click(function(e) {
 					e.preventDefault();
 					$wrapper.find('.type-gallery-image').removeClass('active');
