@@ -25,6 +25,11 @@
 			$trigger.click(function(e) {
 				e.preventDefault();
 				$('html').toggleClass('portable-nav-active');
+				if($trigger.html() == "☰ Navigation") {
+					$trigger.html("☰ Close");
+				} else {
+					$trigger.html("☰ Navigation");
+				}
 			});
 			$menu.addClass('menu-processed');
 		});
