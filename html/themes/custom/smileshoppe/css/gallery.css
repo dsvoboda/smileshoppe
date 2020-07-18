@@ -1,8 +1,8 @@
 /* Gallery CSS */
-.item-list-wrapper.ready {
+#block-views-block-gallery-gallery.ready .item-list-wrapper {
 	position:relative;
 }
-.item-list-wrapper.ready .type-gallery-image.init {
+#block-views-block-gallery-gallery.ready .item-list-wrapper .type-gallery-image.init {
 	position:absolute;
 	top:0;
 	left:0;
