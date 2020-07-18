@@ -31,7 +31,7 @@
 			e.preventDefault();
 			$wrapper.find('.type-gallery-image').removeClass('active');
 			var next = parseInt($images.indexOf($wrapper.attr('data-index')) + 1);
-			if(next <= $images.length) {
+			if(next < $images.length) {
 				$wrapper.find('[data-id="' + $images[next] + '"]').addClass('active');
 			} else {
 				$wrapper.find('[data-id="' + $images[0] + '"]').addClass('active');
