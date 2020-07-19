@@ -38,18 +38,18 @@
     "extra": {
         "drupal-scaffold": {
             "locations": {
-                "web-root": "html/"
+                "web-root": "public_html/"
             }
         },
         "installer-paths": {
-            "html/core": ["type:drupal-core"],
-            "html/libraries/{$name}": ["type:drupal-library"],
-            "html/modules/contrib/{$name}": ["type:drupal-module"],
-            "html/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "html/themes/contrib/{$name}": ["type:drupal-theme"],
+            "public_html/core": ["type:drupal-core"],
+            "public_html/libraries/{$name}": ["type:drupal-library"],
+            "public_html/modules/contrib/{$name}": ["type:drupal-module"],
+            "public_html/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "public_html/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
-            "html/modules/custom/{$name}": ["type:drupal-custom-module"],
-            "html/themes/custom/{$name}": ["type:drupal-custom-theme"]
+            "public_html/modules/custom/{$name}": ["type:drupal-custom-module"],
+            "public_html/themes/custom/{$name}": ["type:drupal-custom-theme"]
         },
         "drupal-core-project-message": {
             "include-keys": ["homepage", "support"],
