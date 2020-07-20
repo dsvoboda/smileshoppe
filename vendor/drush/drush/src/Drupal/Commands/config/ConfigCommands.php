@@ -6,7 +6,6 @@ use Consolidation\AnnotatedCommand\CommandData;
 use Consolidation\AnnotatedCommand\Input\StdinAwareInterface;
 use Consolidation\AnnotatedCommand\Input\StdinAwareTrait;
 use Consolidation\OutputFormatters\StructuredData\RowsOfFields;
-use Consolidation\SiteAlias\SiteAliasManagerAwareTrait;
 use Consolidation\SiteProcess\Util\Escape;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Config\FileStorage;
@@ -15,7 +14,6 @@ use Drupal\Core\Config\StorageInterface;
 use Drush\Commands\DrushCommands;
 use Drush\Drush;
 use Drush\Exec\ExecTrait;
-use Drush\SiteAlias\SiteAliasManagerAwareInterface;
 use Drush\Utils\FsUtils;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputInterface;
@@ -24,21 +22,15 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Yaml\Parser;
 use Webmozart\PathUtil\Path;
 
-class ConfigCommands extends DrushCommands implements StdinAwareInterface, SiteAliasManagerAwareInterface
+class ConfigCommands extends DrushCommands implements StdinAwareInterface
 {
     use StdinAwareTrait;
     use ExecTrait;
-    use SiteAliasManagerAwareTrait;
 
     /**
      * @var ConfigFactoryInterface
      */
     protected $configFactory;
-
-    /**
-     * @var StorageInterface
-     */
-    protected $configStorageExport;
 
     /**
      * @return ConfigFactoryInterface
@@ -52,32 +44,11 @@ class ConfigCommands extends DrushCommands implements StdinAwareInterface, SiteA
     /**
      * ConfigCommands constructor.
      * @param ConfigFactoryInterface $configFactory
-     * @param \Drupal\Core\Config\StorageInterface $configStorage
      */
-    public function __construct($configFactory, StorageInterface $configStorage)
+    public function __construct($configFactory)
     {
         parent::__construct();
         $this->configFactory = $configFactory;
-        $this->configStorage = $configStorage;
-    }
-
-    /**
-     * @param \Drupal\Core\Config\StorageInterface $exportStorage
-     */
-    public function setExportStorage(StorageInterface $exportStorage)
-    {
-        $this->configStorageExport = $exportStorage;
-    }
-
-    /**
-     * @return StorageInterface
-     */
-    public function getConfigStorageExport()
-    {
-        if (isset($this->configStorageExport)) {
-            return $this->configStorageExport;
-        }
-        return $this->configStorage;
     }
 
     /**
@@ -197,9 +168,9 @@ class ConfigCommands extends DrushCommands implements StdinAwareInterface, SiteA
         $temp_storage = new FileStorage($temp_dir);
         $temp_storage->write($config_name, $contents);
 
-        // Note that `getEditor()` returns a string that contains a
+        // Note that `drush_get_editor` returns a string that contains a
         // %s placeholder for the config file path.
-        $exec = self::getEditor();
+        $exec = drush_get_editor();
         $cmd = sprintf($exec, Escape::shellArg($temp_storage->getFilePath($config_name)));
         $process = $this->processManager()->shell($cmd);
         $process->setTty(true);
@@ -207,9 +178,8 @@ class ConfigCommands extends DrushCommands implements StdinAwareInterface, SiteA
 
         // Perform import operation if user did not immediately exit editor.
         if (!$options['bg']) {
-            $redispatch_options = Drush::redispatchOptions() + ['strict' => 0, 'partial' => true, 'source' => $temp_dir];
-            $self = $this->siteAliasManager()->getSelf();
-            $process = $this->processManager()->drush($self, 'config-import', [], $redispatch_options);
+            $redispatch_options = Drush::redispatchOptions()   + ['partial' => true, 'source' => $temp_dir];
+            $process = $this->processManager()->drush(Drush::aliasManager()->getSelf(), 'config-import', [], $redispatch_options);
             $process->mustRun($process->showRealtime());
         }
     }
@@ -317,18 +287,11 @@ class ConfigCommands extends DrushCommands implements StdinAwareInterface, SiteA
             ];
         }
 
-        if (!$rows) {
+        if ($rows) {
+            return new RowsOfFields($rows);
+        } else {
             $this->logger()->notice(dt('No differences between DB and sync directory.'));
-
-            // Suppress output if there are no differences and we are using the
-            // human readable "table" formatter so that we not uselessly output
-            // empty table headers.
-            if ($options['format'] === 'table') {
-                return null;
-            }
         }
-
-        return new RowsOfFields($rows);
     }
 
     /**
@@ -359,7 +322,7 @@ class ConfigCommands extends DrushCommands implements StdinAwareInterface, SiteA
             }
         } else {
             // If a directory isn't specified, use the label argument or default sync directory.
-            $return = \drush_config_get_config_directory($label ?: 'sync');
+            $return = \config_get_config_directory($label ?: CONFIG_SYNC_DIRECTORY);
         }
         return Path::canonicalize($return);
     }
@@ -370,7 +333,7 @@ class ConfigCommands extends DrushCommands implements StdinAwareInterface, SiteA
     public function getChanges($target_storage)
     {
         /** @var StorageInterface $active_storage */
-        $active_storage = $this->getConfigStorageExport();
+        $active_storage = \Drupal::service('config.storage');
 
         $config_comparer = new StorageComparer($active_storage, $target_storage, \Drupal::service('config.manager'));
 
@@ -388,7 +351,7 @@ class ConfigCommands extends DrushCommands implements StdinAwareInterface, SiteA
      */
     public function getStorage($directory)
     {
-        if ($directory == Path::canonicalize(\drush_config_get_config_directory())) {
+        if ($directory == Path::canonicalize(\config_get_config_directory(CONFIG_SYNC_DIRECTORY))) {
             return \Drupal::service('config.storage.sync');
         } else {
             return new FileStorage($directory);
@@ -460,11 +423,6 @@ class ConfigCommands extends DrushCommands implements StdinAwareInterface, SiteA
      */
     public function interactConfigLabel(InputInterface $input, ConsoleOutputInterface $output)
     {
-        if (drush_drupal_major_version() >= 9) {
-            // Nothing to do.
-            return;
-        }
-
         global $config_directories;
 
         $option_name = $input->hasOption('destination') ? 'destination' : 'source';

@@ -5,7 +5,6 @@ use Consolidation\AnnotatedCommand\CommandData;
 use Consolidation\OutputFormatters\StructuredData\RowsOfFields;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Extension\MissingDependencyException;
-use Drupal\Core\Extension\ModuleExtensionList;
 use Drupal\Core\Extension\ModuleInstallerInterface;
 use Drupal\Core\Extension\ThemeHandlerInterface;
 use Drush\Commands\DrushCommands;
@@ -22,15 +21,12 @@ class PmCommands extends DrushCommands
 
     protected $themeHandler;
 
-    protected $extensionListModule;
-
-    public function __construct(ConfigFactoryInterface $configFactory, ModuleInstallerInterface $moduleInstaller, ThemeHandlerInterface $themeHandler, ModuleExtensionList $extensionListModule)
+    public function __construct(ConfigFactoryInterface $configFactory, ModuleInstallerInterface $moduleInstaller, ThemeHandlerInterface $themeHandler)
     {
         parent::__construct();
         $this->configFactory = $configFactory;
         $this->moduleInstaller = $moduleInstaller;
         $this->themeHandler = $themeHandler;
-        $this->extensionListModule = $extensionListModule;
     }
 
     /**
@@ -55,14 +51,6 @@ class PmCommands extends DrushCommands
     public function getThemeHandler()
     {
         return $this->themeHandler;
-    }
-
-    /**
-     * @return \Drupal\Core\Extension\ModuleExtensionList
-     */
-    public function getExtensionListModule()
-    {
-        return $this->extensionListModule;
     }
 
     /**
@@ -94,6 +82,9 @@ class PmCommands extends DrushCommands
             drush_backend_batch_process();
         }
         $this->logger()->success(dt('Successfully enabled: !list', $todo_str));
+        // Our logger got blown away during the container rebuild above.
+        $boot = Drush::bootstrapManager()->bootstrap();
+        $boot->addLogger();
     }
 
     /**
@@ -117,6 +108,9 @@ class PmCommands extends DrushCommands
             throw new \Exception('Unable to uninstall modules.');
         }
         $this->logger()->success(dt('Successfully uninstalled: !list', ['!list' => implode(', ', $list)]));
+        // Our logger got blown away during the container rebuild above.
+        $boot = Drush::bootstrapManager()->bootstrap();
+        $boot->addLogger();
     }
 
     /**
@@ -162,8 +156,8 @@ class PmCommands extends DrushCommands
     public function pmList($options = ['format' => 'table', 'type' => 'module,theme', 'status' => 'enabled,disabled', 'package' => self::REQ, 'core' => false, 'no-core' => false])
     {
         $rows = [];
-
-        $modules = $this->getExtensionListModule()->getList();
+        // @todo Update this and other usages once Drupal 8.5 is unsupported by Drush https://www.drupal.org/node/2709919.
+        $modules = \system_rebuild_module_data();
         $themes = $this->getThemeHandler()->rebuildThemeData();
         $both = array_merge($modules, $themes);
 
@@ -246,7 +240,7 @@ class PmCommands extends DrushCommands
 
     public function addInstallDependencies($modules)
     {
-        $module_data = $this->getExtensionListModule()->reset()->getList();
+        $module_data = system_rebuild_module_data();
         $module_list  = array_combine($modules, $modules);
         if ($missing_modules = array_diff_key($module_list, $module_data)) {
             // One or more of the given modules doesn't exist.
@@ -280,7 +274,7 @@ class PmCommands extends DrushCommands
     public function addUninstallDependencies($modules)
     {
         // Get all module data so we can find dependencies and sort.
-        $module_data = $this->getExtensionListModule()->reset()->getList();
+        $module_data = system_rebuild_module_data();
         $module_list = array_combine($modules, $modules);
         if ($diff = array_diff_key($module_list, $module_data)) {
             throw new \Exception(dt('A specified extension does not exist: !diff', ['!diff' => implode(',', $diff)]));
@@ -290,7 +284,7 @@ class PmCommands extends DrushCommands
 
         // Add dependent modules to the list. The new modules will be processed as
         // the while loop continues.
-        $profile = drush_drupal_get_profile();
+        $profile = drupal_get_profile();
         foreach (array_keys($module_list) as $module) {
             foreach (array_keys($module_data[$module]->required_by) as $dependent) {
                 if (!isset($module_data[$dependent])) {

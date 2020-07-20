@@ -23,7 +23,7 @@
         "drupal/imce": "^2.2",
         "drupal/menu_link_attributes": "^1.1",
         "drupal/pathauto": "^1.8",
-        "drush/drush": "^10.3"
+        "drush/drush": "^9"
     },
     "require-dev": {
         "drupal/core-dev": "^8.8"
