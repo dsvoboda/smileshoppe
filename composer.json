@@ -22,7 +22,8 @@
         "drupal/draggableviews": "^2.0",
         "drupal/imce": "^2.2",
         "drupal/menu_link_attributes": "^1.1",
-        "drupal/pathauto": "^1.8"
+        "drupal/pathauto": "^1.8",
+        "drush/drush": "^10.3"
     },
     "require-dev": {
         "drupal/core-dev": "^8.8"
