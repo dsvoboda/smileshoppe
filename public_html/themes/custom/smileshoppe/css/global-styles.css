@@ -282,9 +282,11 @@ img {
 .type-article .published {
 	font-style:italic;
 	font-size:12px;
+	clear:both;
+	margin-bottom:.5rem;
 }
 
-.type-article h2,.type-article span.published {
+.type-article h2,.type-article small.published {
 	clear:both;
 	display:block;
 }
