@@ -142,8 +142,8 @@ ul.photos {
 }
 /*	Page Photo Styles	*/
 .main .page-photo {
-	float:right;
-	margin:0 0 20px 20px;
+	float:left;
+	margin:0 20px 20px 0;
 }
 img {
 	max-width:100%;
