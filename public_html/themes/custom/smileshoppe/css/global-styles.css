@@ -279,22 +279,13 @@ img {
 	font-weight:700;
 }
 
-.view-blog-teaser .published {
+.type-article .published {
 	font-style:italic;
 	font-size:12px;
 }
 
-.view-blog-teaser h2,.view-blog-teaser span.published {
+.type-article h2,.type-article span.published {
 	clear:both;
-	display:block;
-}
-
-/*	Contact Us Styles	*/
-.contact-us iframe {
-	width:100%;
-}
-
-.contact-us .phone,.contact-us .fax,.contact-us .email {
 	display:block;
 }
 
@@ -312,16 +303,6 @@ img {
 	background:url(/themes/custom/smileshoppe/img/logo-w-name.png) 0 0 no-repeat;
 	background-size:contain;
 	text-indent:-9999px;
-}
-
-/*	Sitemap Page	*/
-.view-sitemap-links ul {
-	list-style-type:disc;
-	padding:10px 0 10px 35px;
-}
-
-.view-sitemap-links .active {
-	color:#d31145;
 }
 
 /*	Admin Styles for Content Management	*/
