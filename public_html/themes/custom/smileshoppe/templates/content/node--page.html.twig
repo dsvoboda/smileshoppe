@@ -83,6 +83,11 @@
 <div{{ attributes.addClass(classes).setAttribute('id','node-'~node.id()) }}>
 	{{ title_prefix }}{{ title_suffix }}
 	<div{{ content_attributes.addClass(node.bundle|clean_class ~ '-content').addClass('node-content') }}>
+		{% if node.field_header_image is not empty %}
+		<div class="header-image">
+			{{ content.field_header_image }}
+		</div>
+		{% endif %}
 		<div class="page-header">
 			<h1 class="title">{{ label }}</h1>
 			<hr />
