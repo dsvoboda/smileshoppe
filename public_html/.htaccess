@@ -1,3 +1,6 @@
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://smileshoppe.com/$1 [R,L]
 #
 # Apache/PHP/Drupal settings:
 #
